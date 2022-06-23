@@ -4,4 +4,4 @@ function readJson() {
   return allText;
 }
 
-readJson();
+var result = readJson();
