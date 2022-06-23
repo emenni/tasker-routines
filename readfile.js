@@ -1,5 +1,5 @@
 function readJson() {
-  var allText = readFile('SMSCartao.json');
+  var allText = readFile('file:///storage/emulated/0/SMSCartao.json');
 
   return allText;
 }
