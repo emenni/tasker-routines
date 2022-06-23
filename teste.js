@@ -13,4 +13,4 @@ function readTextFile(file) {
   rawFile.send(null);
 }
 
-readTextFile('/Documnents/SMSCartao.json');
+readTextFile('file:///Documnents/SMSCartao.json');
