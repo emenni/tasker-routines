@@ -3,7 +3,7 @@ function writeNewEntry() {
   var file = readFile(filename);
   var bd = JSON.parse(file);
   bd.push(http_data);
-  var changes = JSON.stringify(bd);
+  var changes = bd;
   writeFile(filename, changes, false);
 }
 writeNewEntry();
