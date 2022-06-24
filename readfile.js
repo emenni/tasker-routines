@@ -1,9 +1,9 @@
-function readJson() {
-  //result.push(http_data)
-
-  var allText = JSON.parse(readFile('Documents/SMSCartao.json'));
-
-  return allText;
+function writeNewEntry() {
+  var filename = 'Documents/SMSCartao.json';
+  var file = readFile(filename);
+  var bd = JSON.parse(file);
+  bd.push({ http_data });
+  var changes = JSON.stringify(bd);
+  writeFile(filename, changes, false);
 }
-
-var result = readJson();
+writeNewEntry();
