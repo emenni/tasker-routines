@@ -1,5 +1,7 @@
 function readJson() {
-  var allText = readFile('Documents/SMSCartao.json');
+  //result.push(http_data)
+
+  var allText = JSON.parse(readFile('Documents/SMSCartao.json'));
 
   return allText;
 }
