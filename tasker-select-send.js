@@ -8,7 +8,7 @@ function selectToSend() {
   [day, month, year] = enddate.split('/');
   enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
-  flash(bd.toString());
+  flash(bd[0]);
   //flash(startdate)
 
   var resultProductData = bd.filter(function (a) {
