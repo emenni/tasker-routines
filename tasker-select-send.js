@@ -8,7 +8,7 @@ startdate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 [day, month, year] = enddate.split('/')
 enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
-  flash(file)
+  flash(bd.length)
   flash(startdate)
 
   var resultProductData = bd.filter(function (a) {
