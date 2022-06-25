@@ -2,15 +2,17 @@ function selectToSend() {
   var file = readFile(jsonfile);
   var bd = JSON.parse(file);
 
-  var startDate = new Date(startdate);
-  var endDate = new Date(enddate);
+  var startdate = new Date(startdate);
+  var enddate = new Date(enddate);
 
 var [day, month, year] = startdate.split('/')
-startDate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
+startdate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
 [day, month, year] = enddate.split('/')
 enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
+  flash(file)
+  flash(statdate)
 
   var resultProductData = bd.filter(function (a) {
     var hitDates = a.em || {};
@@ -21,7 +23,7 @@ enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
     // .some() stops this process if one item is found that returns true in the callback function and returns true for the whole expression
     hitDateMatchExists = hitDates.some(function (dateStr) {
       var date = new Date(dateStr);
-      return date >= startDate && date <= endDate;
+      return date >= startdate && date <= enddate;
     });
     return hitDateMatchExists;
   });
