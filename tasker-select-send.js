@@ -5,6 +5,13 @@ function selectToSend() {
   var startDate = new Date(startdate);
   var endDate = new Date(enddate);
 
+var [day, month, year] = startdate.split('/')
+startDate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
+
+[day, month, year] = enddate.split('/')
+enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
+
+
   var resultProductData = bd.filter(function (a) {
     var hitDates = a.em || {};
     // extract all date strings
