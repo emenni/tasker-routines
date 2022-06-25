@@ -9,7 +9,7 @@ startdate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
   flash(file)
-  flash(statdate)
+  flash(startdate)
 
   var resultProductData = bd.filter(function (a) {
     var hitDates = a.em || {};
