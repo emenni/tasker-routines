@@ -29,4 +29,4 @@ function selectToSend() {
   return sumup;
 }
 
-var SOMA = selectToSend();
+selectToSend();
