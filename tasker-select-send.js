@@ -25,7 +25,7 @@ function selectToSend() {
     return hitDateMatchExists;
   });
   
-  flash (resultProductData);
+  flash (resultProductData.length);
 
   return resultProductData;
 
