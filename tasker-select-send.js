@@ -9,9 +9,7 @@ function selectToSend() {
   //day, month, year] = enddate.split('/');
   //enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
-
-    flash(records[i]);
-
+  flash(records[0]);
 
   //flash(bd(0));
 
