@@ -24,8 +24,7 @@ function selectToSend() {
     }
   });
 
+  writeFile(selectedrecords, JSON.stringify(foundrecords), false);
 
-  return [foundrecords , sumup];
+  return sumup;
 }
-
-writeFile(selectedrecords, JSON.stringify(selectToSend()[0]), false);
