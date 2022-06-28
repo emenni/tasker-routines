@@ -18,7 +18,7 @@ function selectToSend() {
   });
 
   var sumup = 0;
-  foundrecords.forEach(() => {
+  foundrecords.forEach((record) => {
     if (typeof record.RS === 'number') {
       sumup += record.RS;
     }
