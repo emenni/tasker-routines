@@ -24,10 +24,8 @@ function selectToSend() {
     }
   });
 
-  flash(sumup);
-  flashLong(sumup);
 
-  return foundrecords;
+  return [foundrecords , sumup];
 }
 
-writeFile(selectedrecords, JSON.stringify(selectToSend()), false);
+writeFile(selectedrecords, JSON.stringify(selectToSend()[0]), false);
