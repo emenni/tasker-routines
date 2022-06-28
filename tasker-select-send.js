@@ -8,9 +8,9 @@ function selectToSend() {
   [day, month, year] = enddate.split('/');
   enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
-  flash(bd[0]);
+  flash('teste');
   //flash(startdate)
-
+  /* 
   var resultProductData = bd.filter(function (a) {
     var hitDates = a.em || {};
     // extract all date strings
@@ -24,6 +24,6 @@ function selectToSend() {
     });
     return hitDateMatchExists;
   });
-  return resultProductData;
+  return resultProductData; */
 }
 var selectedrecords = selectToSend();
