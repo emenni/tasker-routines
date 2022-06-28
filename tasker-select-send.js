@@ -2,10 +2,13 @@ function selectToSend() {
   var file = readFile(jsonfile);
   var bd = JSON.parse(file);
 
+ 
   var [year, month, day] = startdate.split('-');
   startdate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
-  flash(startdate.toString)[(year, month, day)] = enddate.split('-');
+  flash (startdate.toString());
+
+  [year, month, day] = enddate.split('-');
   enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
   //flash(startdate);
