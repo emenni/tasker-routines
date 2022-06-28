@@ -29,4 +29,5 @@ function selectToSend() {
   return sumup;
 }
 
-selectToSend();
+setGlobal('SOMA',selectToSend())
+
