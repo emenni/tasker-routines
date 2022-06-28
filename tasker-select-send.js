@@ -1,37 +1,28 @@
 function selectToSend() {
   var file = readFile(jsonfile);
   var bd = JSON.parse(file);
-  
- startdate = formatDate(startdate);
-   enddate = formatDate(enddate);
 
-function formatDate(inputtodate){
-  
-  [year, month, day] = inputtodate.split('-');
-  inputtodate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
+  startdate = formatDate(startdate);
+  enddate = formatDate(enddate);
 
-  return inputtodate;
+  function formatDate(inputtodate) {
+    [year, month, day] = inputtodate.split('-');
+    inputtodate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
-}
-
-
-  
+    return inputtodate;
+  }
 
   var sumup = 0;
 
   var foundrecords = bd.filter((record) => {
     recorddate = new Date(record.em);
-     sumup += record.RS;
+    sumup += typeof (record.RS === 'number' ? record.RS : 0);
     return startdate <= recorddate && enddate >= recorddate;
   });
 
-  flash (sumup);
-  
-  return foundrecords
+  flash(sumup);
 
+  return foundrecords;
 }
 
-
-writeFile(selectedrecords,JSON.stringify(selectToSend()),false);
-
-;
+writeFile(selectedrecords, JSON.stringify(selectToSend()), false);
