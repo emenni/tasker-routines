@@ -12,13 +12,13 @@ function selectToSend() {
 
   var resultproductdata = bd.filter(function (a) {
     var hitdates = a.em || {};
-    flash('Lendo: ' + a.em.toString())
     // extract all date strings
     hitdates = Object.keys(hitdates);
     // improvement: use some. this is an improment because .map()
     // and .filter() are walking through all elements.
     // .some() stops this process if one item is found that returns true in the callback function and returns true for the whole expression
     hitdatematchexists = hitdates.some(function (datestr) {
+      flash('dateestr: ' + a.dateestr.toString())
       var date = new Date(datestr);
       return date >= startdate && date <= enddate;
     });
