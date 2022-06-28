@@ -8,23 +8,11 @@ function selectToSend() {
   [year, month, day] = enddate.split('-');
   enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
-  //flash(startdate);
-
-  var resultproductdata = bd.filter(function (a) {
-    var hitdates = a.em || {};
-    // extract all date strings
-    hitdates = Object.keys(hitdates);
-    // improvement: use some. this is an improment because .map()
-    // and .filter() are walking through all elements.
-    // .some() stops this process if one item is found that returns true in the callback function and returns true for the whole expression
-    hitdatematchexists = hitdates.some(function (datestr) {
-      var date = new Date(datestr);
-      flash('dateestr: ' + date.toString())
-      return date >= startdate && date <= enddate;
-    });
-    return hitdatematchexists;
+  return bd.filter((record) => {
+    recorddate = new Date(record.em);
+    return startdate <= recorddate && enddate >= recorddate;
   });
 
-  return resultproductdata;
 }
+
 var selectedrecords = selectToSend();
