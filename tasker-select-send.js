@@ -14,7 +14,6 @@ function selectToSend() {
     var hitdates = a.em || {};
     // extract all date strings
     hitdates = Object.keys(hitdates);
-    flash('Leu:' + hitdates);
     // improvement: use some. this is an improment because .map()
     // and .filter() are walking through all elements.
     // .some() stops this process if one item is found that returns true in the callback function and returns true for the whole expression
