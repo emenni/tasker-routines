@@ -16,7 +16,11 @@ function selectToSend() {
 
   var foundrecords = bd.filter((record) => {
     recorddate = new Date(record.em);
-    sumup += typeof (record.RS === 'number' ? record.RS : 0);
+
+    if (typeof record.RS === 'number') {
+      sumup += record.RS;
+    }
+
     return startdate <= recorddate && enddate >= recorddate;
   });
 
