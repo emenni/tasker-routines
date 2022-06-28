@@ -11,6 +11,8 @@ function formatDate(convertDate){
   [year, month, day] = convertDate.split('-');
   convertDate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
+  return convertDate;
+
 }
 
 
