@@ -12,16 +12,16 @@ function selectToSend() {
     return inputtodate;
   }
 
-  var sumup = 0;
-
   var foundrecords = bd.filter((record) => {
     recorddate = new Date(record.em);
+    return startdate <= recorddate && enddate >= recorddate;
+  });
 
+  var sumup = 0;
+  foundrecords.forEach(() => {
     if (typeof record.RS === 'number') {
       sumup += record.RS;
     }
-
-    return startdate <= recorddate && enddate >= recorddate;
   });
 
   flash(sumup);
