@@ -19,7 +19,7 @@ function selectToSend() {
     // .some() stops this process if one item is found that returns true in the callback function and returns true for the whole expression
     hitdatematchexists = hitdates.some(function (datestr) {
       var date = new Date(datestr);
-      flash('dateestr: ' + datestr.toString())
+      flash('dateestr: ' + date.toString())
       return date >= startdate && date <= enddate;
     });
     return hitdatematchexists;
