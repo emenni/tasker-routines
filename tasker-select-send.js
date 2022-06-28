@@ -1,6 +1,6 @@
 function selectToSend() {
   var file = readFile(jsonfile);
-  var bd = JSON.parse(file)[0].em;
+  var bd = JSON.parse(file);
 
   //var [day, month, year] = startdate.split('/');
   //startdate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
@@ -8,11 +8,7 @@ function selectToSend() {
   //day, month, year] = enddate.split('/');
   //enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
-  flash(bd);
-
-  //flash(bd(0));
-
-  /* 
+   
   var resultProductData = bd.filter(function (a) {
     var hitDates = a.em || {};
     // extract all date strings
@@ -26,6 +22,6 @@ function selectToSend() {
     });
     return hitDateMatchExists;
   });
-  return resultProductData; */
+  return resultProductData; 
 }
 var selectedrecords = selectToSend();
