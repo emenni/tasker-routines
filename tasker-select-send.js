@@ -2,11 +2,17 @@ function selectToSend() {
   var file = readFile(jsonfile);
   var bd = JSON.parse(file);
 
-  var [year, month, day] = startdate.split('-');
-  startdate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
+  
+ startdate = formatDate(startdate);
+   enddate = formatDate(enddate);
 
-  [year, month, day] = enddate.split('-');
-  enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
+function formatDate(convertDate){
+  
+  [year, month, day] = convertDate.split('-');
+  convertDate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
+
+}
+
 
   return bd.filter((record) => {
     recorddate = new Date(record.em);
