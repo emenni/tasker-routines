@@ -1,6 +1,6 @@
 function selectToSend() {
   var file = readFile(jsonfile);
-  var bd = JSON.parse(local(file));
+  var bd = JSON.parse(file);
 
   //var [day, month, year] = startdate.split('/');
   //startdate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
@@ -10,7 +10,7 @@ function selectToSend() {
 
 
   for (var i = 0; i < bd.length; i++) {
-    flash(i);
+    flash(bd[0].values);
     }
 
   //flash(bd(0));
