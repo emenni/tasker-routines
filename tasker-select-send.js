@@ -1,27 +1,36 @@
 function selectToSend() {
   var file = readFile(jsonfile);
   var bd = JSON.parse(file);
-
   
  startdate = formatDate(startdate);
    enddate = formatDate(enddate);
 
-function formatDate(convertDate){
+function formatDate(inputtodate){
   
-  [year, month, day] = convertDate.split('-');
-  convertDate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
+  [year, month, day] = inputtodate.split('-');
+  inputtodate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
-  return convertDate;
+  return inputtodate;
 
 }
 
 
-  return bd.filter((record) => {
+  
+
+  var sumup = 0;
+
+  var foundrecords = bd.filter((record) => {
     recorddate = new Date(record.em);
+     sumup += record.RS;
     return startdate <= recorddate && enddate >= recorddate;
   });
 
+  flash (sumup);
+  
+  return foundrecords
+
 }
+
 
 writeFile(selectedrecords,JSON.stringify(selectToSend()),false);
 
