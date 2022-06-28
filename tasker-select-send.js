@@ -13,6 +13,7 @@ function selectToSend() {
     return startdate <= recorddate && enddate >= recorddate;
   });
 
+  writeFile(selectedrecords,JSON.stringify(selectedrecords),false);
 }
 
-var selectedrecords = selectToSend();
+ selectToSend();
