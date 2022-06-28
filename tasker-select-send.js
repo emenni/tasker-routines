@@ -11,7 +11,7 @@ function selectToSend() {
 
   //flash(startdate);
 
-  var resultProductData = bd.filter(function (a) {
+  var resultproductdata = bd.filter(function (a) {
     var hitDates = a.em || {};
     // extract all date strings
     hitDates = Object.keys(hitDates);
@@ -25,9 +25,9 @@ function selectToSend() {
     return hitDateMatchExists;
   });
   
-  flash (resultProductData.length);
+  flash (resultproductdata.length);
 
-  return resultProductData;
+  return resultproductdata;
 
 }
 var selectedrecords = selectToSend();
