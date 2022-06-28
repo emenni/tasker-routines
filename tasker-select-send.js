@@ -28,3 +28,5 @@ function selectToSend() {
 
   return sumup;
 }
+
+selectToSend();
