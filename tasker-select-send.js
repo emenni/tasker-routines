@@ -12,17 +12,18 @@ function selectToSend() {
   //flash(startdate);
 
   var resultproductdata = bd.filter(function (a) {
-    var hitDates = a.em || {};
+    var hitdates = a.em || {};
+    flash(hitdates)
     // extract all date strings
-    hitDates = Object.keys(hitDates);
+    hitdates = Object.keys(hitdates);
     // improvement: use some. this is an improment because .map()
     // and .filter() are walking through all elements.
     // .some() stops this process if one item is found that returns true in the callback function and returns true for the whole expression
-    hitDateMatchExists = hitDates.some(function (dateStr) {
-      var date = new Date(dateStr);
+    hitdatematchexists = hitdates.some(function (datestr) {
+      var date = new Date(datestr);
       return date >= startdate && date <= enddate;
     });
-    return hitDateMatchExists;
+    return hitdatematchexists;
   });
   
   flash (resultproductdata.length);
