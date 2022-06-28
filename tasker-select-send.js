@@ -10,9 +10,8 @@ function selectToSend() {
   //enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
 
-  for (var i = 0; i < records.length; i++) {
     flash(records[i]);
-    }
+
 
   //flash(bd(0));
 
