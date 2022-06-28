@@ -2,14 +2,14 @@ function selectToSend() {
   var file = readFile(jsonfile);
   var bd = JSON.parse(file);
 
-  //var [day, month, year] = startdate.split('/');
-  //startdate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
+  var [year, month, day] = startdate.split('-');
+  startdate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
-  //day, month, year] = enddate.split('/');
-  //enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
+  [year, month, day] = enddate.split('-');
+  enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
    flash(startdate)
-   
+
   var resultProductData = bd.filter(function (a) {
     var hitDates = a.em || {};
     // extract all date strings
