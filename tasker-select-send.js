@@ -12,7 +12,7 @@ function selectToSend() {
 
   var resultproductdata = bd.filter(function (a) {
     var hitdates = a.em || {};
-    flash(a.em.toString())
+    flash('Lendo: ' + a.em.toString())
     // extract all date strings
     hitdates = Object.keys(hitdates);
     // improvement: use some. this is an improment because .map()
