@@ -6,8 +6,6 @@ function selectToSend() {
   var [year, month, day] = startdate.split('-');
   startdate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
-  flash (startdate.toString());
-
   [year, month, day] = enddate.split('-');
   enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
@@ -26,6 +24,10 @@ function selectToSend() {
     });
     return hitDateMatchExists;
   });
+  
+  flash (resultProductData);
+
   return resultProductData;
+
 }
 var selectedrecords = selectToSend();
