@@ -25,6 +25,7 @@ function selectToSend() {
   });
 
   flash(sumup);
+  notify(sumup);
 
   return foundrecords;
 }
