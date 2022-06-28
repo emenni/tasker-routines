@@ -2,7 +2,6 @@ function selectToSend() {
   var file = readFile(jsonfile);
   var bd = JSON.parse(file);
 
- 
   var [year, month, day] = startdate.split('-');
   startdate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
@@ -13,9 +12,9 @@ function selectToSend() {
 
   var resultproductdata = bd.filter(function (a) {
     var hitdates = a.em || {};
-    flash(hitdates)
     // extract all date strings
     hitdates = Object.keys(hitdates);
+    flash('Leu:' + hitdates);
     // improvement: use some. this is an improment because .map()
     // and .filter() are walking through all elements.
     // .some() stops this process if one item is found that returns true in the callback function and returns true for the whole expression
@@ -25,10 +24,7 @@ function selectToSend() {
     });
     return hitdatematchexists;
   });
-  
-  flash (resultproductdata.length);
 
   return resultproductdata;
-
 }
 var selectedrecords = selectToSend();
