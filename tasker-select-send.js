@@ -2,13 +2,15 @@ function selectToSend() {
   var file = readFile(jsonfile);
   var bd = JSON.parse(file);
 
+  flash(startdate);
+
   var [year, month, day] = startdate.split('-');
   startdate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
   [year, month, day] = enddate.split('-');
   enddate = new Date(+year || new Date().getFullYear(), +month - 1, +day);
 
-   flash(startdate)
+  //flash(startdate);
 
   var resultProductData = bd.filter(function (a) {
     var hitDates = a.em || {};
@@ -23,6 +25,6 @@ function selectToSend() {
     });
     return hitDateMatchExists;
   });
-  return resultProductData; 
+  return resultProductData;
 }
 var selectedrecords = selectToSend();
