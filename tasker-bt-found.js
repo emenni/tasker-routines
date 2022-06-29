@@ -1,7 +1,7 @@
 var leituras = { bt_name, bt_address };
 
 for (leitura in bt_address) {
-  flash((leituras.bt_name[leitura] + ' -> ' + leituras.bt_address[leitura]);
+  flash(leituras.bt_name[leitura] + ' -> ' + leituras.bt_address[leitura]);
 }
 
 /* bt_alias(),
