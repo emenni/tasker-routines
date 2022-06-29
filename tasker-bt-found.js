@@ -3,8 +3,8 @@ var timestamp = new Date(Date.now()).toLocaleString();
 for (leitura in bt_address) {
   gravarLeitura.push({
     readDate: timestamp,
-    btAlias: bt_alias[leitura],
-    btBatteryLevel : bt_battery_level[leitura] ,
+    //btAlias: bt_alias[leitura],
+    //btBatteryLevel : bt_battery_level[leitura] ,
     btClass: bt_class[leitura] ,
     btClassName: bt_class_name[leitura] ,
     btConnected: bt_connected[leitura] ,
