@@ -1,5 +1,5 @@
 var leituras = {
-  bt_alias,
+  //bt_alias().value,
   bt_battery_level,
   bt_class,
   bt_class_name,
