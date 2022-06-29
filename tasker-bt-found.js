@@ -1,6 +1,15 @@
-bt_address.forEach((valor) => {
-  flash('Teste:' + valor);
-});
+
+props = [bt_name,bt_address];
+
+for (p in props) {
+  props[p].forEach((propriedade)=>{
+     propriedade.forEach ((valor) => {
+
+       flash('Teste:' + valor);
+     })
+  })
+}
+
 
 /* bt_alias(),
 bt_battery_level(),
