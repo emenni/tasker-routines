@@ -1,12 +1,9 @@
 
-props = [bt_name,bt_address];
+var propriedades = [bt_name,bt_address];
 
-for (p in props) {
-  props[p].forEach((propriedade)=>{
-     propriedade.forEach ((valor) => {
-
-       flash('Teste:' + valor);
-     })
+for (prop in propriedades) {
+  propriedades[prop].forEach((propriedade)=>{
+   flash(propriedade)
   })
 }
 
