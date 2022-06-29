@@ -1,8 +1,8 @@
 gravarLeitura = [];
-
+var timestamp = new Date(Date.now()).toLocaleString();
 for (leitura in bt_address) {
   gravarLeitura.push({
-    readDate: Date.now(),
+    readDate: timestamp,
     btAlias: bt_alias[leitura],
     btBatteryLevel : bt_battery_level[leitura] ,
     btClass: bt_class[leitura] ,
@@ -18,7 +18,6 @@ for (leitura in bt_address) {
     btType: bt_type[leitura] ,
   });
 }
-
   var changes = JSON.stringify(gravarLeitura);
   writeFile(jsonfile, changes, false);
 
