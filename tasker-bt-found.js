@@ -1,11 +1,7 @@
-var propriedades = [bt_name, bt_address];
-propriedadesEnum = Object.entries(propriedades);
+var leituras = { bt_name, bt_address };
 
-for (prop in propriedades) {
-  flash(propriedadesEnum[prop]);
-  propriedades[prop].forEach((valor) => {
-    flash(valor);
-  });
+for (leitura in bt_address) {
+  console.log(leituras.bt_name[leitura], leituras.bt_address[leitura]);
 }
 
 /* bt_alias(),
