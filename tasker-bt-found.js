@@ -5,6 +5,7 @@
   for (leitura in bt_address) {
     gravarLeitura.push({
       readDate: timestamp,
+      location: gl_msp_url,
       //btAlias: bt_alias[leitura],
       //btBatteryLevel : bt_battery_level[leitura] ,
       btClass: bt_class[leitura] ,
