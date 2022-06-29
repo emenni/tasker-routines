@@ -16,7 +16,7 @@ var leituras = {
 gravarLeitura = [];
 
 for (leitura in bt_address) {
-  gravarleitura.push({
+  flash({
     btAlias: leituras.bt_alias[leitura] || 'notDeclared',
     btBatteryLevel: leituras.bt_battery_level[leitura] || 'notDeclared',
     btClass: leituras.bt_class[leitura] || 'notDeclared',
