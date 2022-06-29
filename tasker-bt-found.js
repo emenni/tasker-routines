@@ -1,10 +1,10 @@
 var leituras = {
-  //bt_alias().value,
+  //bt_alias,
   //bt_battery_level,
   //bt_class,
   //bt_class_name,
-  //bt_connected,
-  //bt_encrypted,
+  bt_connected,
+  bt_encrypted,
   bt_address,
   bt_major_class,
   bt_major_class_name,
@@ -17,10 +17,10 @@ gravarLeitura = [];
 
 for (leitura in bt_address) {
   flash({
-    btAlias: leituras.bt_alias[leitura] || 'notDeclared',
-    btBatteryLevel: leituras.bt_battery_level[leitura] || 'notDeclared',
-    btClass: leituras.bt_class[leitura] || 'notDeclared',
-    btClassName: leituras.bt_class_name[leitura] || 'notDeclared',
+    //btAlias: leituras.bt_alias[leitura] || 'notDeclared',
+    //btBatteryLevel: leituras.bt_battery_level[leitura] || 'notDeclared',
+    //btClass: leituras.bt_class[leitura] || 'notDeclared',
+    //btClassName: leituras.bt_class_name[leitura] || 'notDeclared',
     btConnected: leituras.bt_connected[leitura] || 'notDeclared',
     btEncrypted: leituras.bt_encrypted[leitura] || 'notDeclared',
     btAddress: leituras.bt_address[leitura] || 'notDeclared',
