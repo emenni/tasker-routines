@@ -2,7 +2,7 @@ gravarLeitura = [];
 
 for (leitura in bt_address) {
   gravarLeitura.push({
-    readDate: Date().now(),
+    readDate: Date.now(),
     btAlias: bt_alias[leitura],
     btBatteryLevel : bt_battery_level[leitura] ,
     btClass: bt_class[leitura] ,
