@@ -1,14 +1,12 @@
+var propriedades = [bt_name, bt_address];
+propriedadesEnum = Object.entries(propriedades);
 
-var propriedades = [bt_name,bt_address];
-propriedadesEnum = Object.keys(propriedades);
-
-for (prop in propriedades) {  
-  flash(propriedadesEnum[prop])  
-  propriedades[prop].forEach((valor)=>{
-   flash(valor)
-  })
+for (prop in propriedades) {
+  flash(propriedadesEnum[prop]);
+  propriedades[prop].forEach((valor) => {
+    flash(valor);
+  });
 }
-
 
 /* bt_alias(),
 bt_battery_level(),
