@@ -1,9 +1,11 @@
 
 var propriedades = [bt_name,bt_address];
+propriedadesEnum = Object.keys(propriedades);
 
-for (prop in propriedades) {
-  propriedades[prop].forEach((propriedade)=>{
-   flash(propriedade)
+for (prop in propriedades) {  
+  flash(propriedadesEnum[prop])  
+  propriedades[prop].forEach((valor)=>{
+   flash(valor)
   })
 }
 
