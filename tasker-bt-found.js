@@ -18,4 +18,6 @@ for (leitura in bt_address) {
   });
 }
 
-flash(JSON.stringify(gravarLeitura[0]))
+  var changes = JSON.stringify(gravarLeitura);
+  writeFile(jsonfile, changes, false);
+
