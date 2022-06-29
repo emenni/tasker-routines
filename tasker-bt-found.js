@@ -11,7 +11,7 @@ var leituras = {
   bt_name,
   bt_paired,
   bt_signal_strength,
-  bt_type,
+  bt_type
 };
 gravarLeitura = [];
 
