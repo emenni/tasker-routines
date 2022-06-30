@@ -57,7 +57,7 @@
       db.push(found);
 
       var changes = JSON.stringify(db);
-      writeFile(jsonfile, changes, true);
+      writeFile(jsonfile, changes, false);
     }
   });
 })();
