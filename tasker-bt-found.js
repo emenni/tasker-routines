@@ -50,9 +50,8 @@
     writeFile(
       'Documents/result.txt',
       found.btAddress + '->' + matched.length,
-      false
+      true
     );
-    
   });
   var changes = JSON.stringify(foundDevices);
   //writeFile(jsonfile, changes, true);
