@@ -54,7 +54,9 @@
     });
 
     if (foundknowdevice.length === 0) {
-      var changes = JSON.stringify(found);
+      db.push(found);
+
+      var changes = JSON.stringify(db);
       writeFile(jsonfile, changes, true);
     }
   });
