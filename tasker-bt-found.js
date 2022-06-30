@@ -7,7 +7,9 @@
   typeof bt_encrypted === 'undefined' ? (bt_encrypted = '') : false;
   typeof bt_address === 'undefined' ? (bt_address = '') : false;
   typeof bt_major_class === 'undefined' ? (bt_major_class = '') : false;
-  typeof bt_major_class_name === 'undefined' ? bt_major_class_name = '' : false;
+  typeof bt_major_class_name === 'undefined'
+    ? (bt_major_class_name = '')
+    : false;
   typeof bt_name === 'undefined' ? (bt_name = '') : false;
   typeof bt_paired === 'undefined' ? (bt_paired = '') : false;
   typeof bt_signal_strength === 'undefined' ? (bt_signal_strength = '') : false;
@@ -19,6 +21,7 @@
   foundDevices = [];
 
   var timestamp = new Date(Date.now()).toLocaleString();
+  
   for (leitura in bt_address) {
     foundDevices.push({
       readDate: timestamp,
@@ -44,7 +47,11 @@
       return previous.btAddress === found.btAddress;
     });
 
-    flash(matched.length);
+    flash(found.btAddress);
+
+    matched.forEach(() => {
+      flash(matched.readDate);
+    });
   });
   var changes = JSON.stringify(foundDevices);
   //writeFile(jsonfile, changes, true);
