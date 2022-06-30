@@ -36,5 +36,5 @@
 
  })
   var changes = JSON.stringify(foundDevices);
-  writeFile(jsonfile, changes, true);
+  //writeFile(jsonfile, changes, true);
 })()
