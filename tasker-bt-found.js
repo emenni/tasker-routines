@@ -1,9 +1,11 @@
+
+
 (function foundBTDevices(){
 
-  gravarLeitura = [];
+  foundDevices = [];
   var timestamp = new Date(Date.now()).toLocaleString();
   for (leitura in bt_address) {
-    gravarLeitura.push({
+    foundDevices.push({
       readDate: timestamp,
       location: gl_map_url,
       //btAlias: bt_alias[leitura],
@@ -21,6 +23,21 @@
       btType: bt_type[leitura] ,
     });
   }
-  var changes = JSON.stringify(gravarLeitura);
+
+    var file = readFile(jsonfile);
+    var db = JSON.parse(file);
+
+   foundDevices.forEach((found)=> {
+     
+    var matched = db.filter((previous) => {
+       return previous.btAddress === found.btAddress
+      })
+
+      flash(matched.length)
+      
+   })
+
+
+  var changes = JSON.stringify(foundDevices);
   writeFile(jsonfile, changes, true);
 })()
