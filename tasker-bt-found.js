@@ -1,5 +1,9 @@
 (function foundBTDevices(){
 
+  typeof(bt_alias) === 'undefined' ?  bt_alias = '' :  false
+
+
+
   var file = readFile(jsonfile);
   var db = JSON.parse(file);
 
