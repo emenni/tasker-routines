@@ -21,7 +21,7 @@
   foundDevices = [];
 
   var timestamp = new Date(Date.now()).toLocaleString();
-  
+
   for (leitura in bt_address) {
     foundDevices.push({
       readDate: timestamp,
@@ -47,11 +47,12 @@
       return previous.btAddress === found.btAddress;
     });
 
-    flash(found.btAddress);
-
-    matched.forEach(() => {
-      flash(matched.readDate);
-    });
+    writeFile(
+      'Documents/result.txt',
+      found.btAddress + '->' + matched.length,
+      false
+    );
+    
   });
   var changes = JSON.stringify(foundDevices);
   //writeFile(jsonfile, changes, true);
