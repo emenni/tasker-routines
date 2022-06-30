@@ -18,6 +18,8 @@
   var file = readFile(jsonfile);
   var db = JSON.parse(file);
 
+  var knowdevices = JSON.parse(readFile(knowdevicesdb));
+
   foundDevices = [];
 
   var timestamp = new Date(Date.now()).toLocaleString();
@@ -47,12 +49,13 @@
       return previous.btAddress === found.btAddress;
     });
 
-    writeFile(
-      'Documents/result.txt',
-      found.btAddress + '->' + matched.length,
-      true
-    );
+    var foundknowdevice = knowdevices.filter((know) => {
+      return know.btAddress === found.btAddress;
+    });
+
+    if (foundknowdevice.length === 0) {
+      var changes = JSON.stringify(found);
+      writeFile(jsonfile, changes, true);
+    }
   });
-  var changes = JSON.stringify(foundDevices);
-  //writeFile(jsonfile, changes, true);
 })();
