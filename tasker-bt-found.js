@@ -1,5 +1,3 @@
-
-
 (function foundBTDevices(){
 
   foundDevices = [];
@@ -23,20 +21,6 @@
       btType: bt_type[leitura] ,
     });
   }
-
-    var file = readFile(jsonfile);
-    var db = JSON.parse(file);
-
-   foundDevices.forEach((found)=> {
-     
-    var matched = db.filter((previous) => {
-       return previous.btAddress === found.btAddress
-      })
-
-      flash(matched.length)
-      
-   })
-
 
   var changes = JSON.stringify(foundDevices);
   writeFile(jsonfile, changes, true);
